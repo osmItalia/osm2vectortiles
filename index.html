@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>OSM2VectorTiles with Bright style</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet'/>
+	<style>
+		body{margin:0; padding:0;}
+		#map{position:absolute; top:0; bottom:0; width:100%;}
+	</style>
+</head>
+<body>
+	<div id='map'></div>
+	<script>
+      var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'http://172.16.137.149:8080/styles/bright.json',
+          center: [13.744, 41.816], // starting position
+          zoom: 5, // starting zoom
+          hash: true
+      });
+      var navigation = new mapboxgl.Navigation({
+          position: 'top-left'
+      });
+      map.addControl(navigation);
+			map.addControl(new mapboxgl.Geolocate({position: 'top-left'})); // position is optional
+  </script>
+</body>
+</html>
