@@ -21,11 +21,8 @@
           zoom: 5, // starting zoom
           hash: true
       });
-      var navigation = new mapboxgl.Navigation({
-          position: 'top-left'
-      });
-      map.addControl(navigation);
-			map.addControl(new mapboxgl.Geolocate({position: 'top-left'})); // position is optional
-  </script>
+      map.addControl(new mapboxgl.Navigation({position: 'top-left'}));
+			map.addControl(new mapboxgl.Geolocate({position: 'top-right'}));
+	</script>
 </body>
 </html>
